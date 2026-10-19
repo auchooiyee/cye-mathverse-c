@@ -16,7 +16,7 @@ try{
   const context=await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce'});
   if(!live)await context.route(origin+'/**',async route=>{const path=new URL(route.request().url()).pathname;const response=await context.request.get(local+path,{maxRedirects:0});await route.fulfill({response});});
   const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(new URL(r.url()).origin!==origin)externalRequests.push(r.url());});page.on('response',r=>{if(r.status()>=400)errors.push(`${r.status()} ${r.url()}`);});
-  await page.goto(origin+(live?'/':'/apps/lobby/'));await page.locator('[data-game]').first().waitFor();
+  await page.goto(origin+(live?'/':'/apps/lobby/'));await page.locator('[data-game]').first().waitFor();await page.waitForFunction(()=>document.querySelector('#access-note')?.textContent.includes('当前设备'));
   assert.match(await page.locator('#access-note').innerText(),/当前设备/);assert.ok(!(await page.locator('#access-note').innerText()).includes('.command'));
   for(const slug of ['cyber-code-breaker','graphquest','variation-factory']){const href=await page.locator(`[data-game="${slug}"]`).getAttribute('href');assert.equal(new URL(href,page.url()).origin,origin);assert.ok(!href.includes('127.0.0.1'));}
   if(live){const response=await context.request.get(origin+'/apps/lobby/');assert.ok(response.headers()['content-security-policy']?.includes("connect-src 'none'"));}
@@ -32,7 +32,7 @@ try{
     await page.locator('#mathverse-lobby-nav').getByRole('link').click();await page.locator(`[data-game="${slug}"]`).click();const after=await page.evaluate(k=>JSON.parse(localStorage.getItem(k)),saveKey);assert.equal(after.runId,value.runId);assert.equal(after.entries[['C01','G01','V01'][i]].done,true);await page.reload();assert.equal((await page.evaluate(k=>JSON.parse(localStorage.getItem(k)),saveKey)).runId,value.runId);await page.locator('#mathverse-lobby-nav').getByRole('link').click();
   }
   checks.push('All three games complete a real task, return to lobby, reload and preserve independent saves on one hosted origin');
-  await page.screenshot({path:output+(live?'/live-desktop.png':'/prepared-desktop.png'),fullPage:true});await page.setViewportSize({width:360,height:800});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.screenshot({path:output+(live?'/live-mobile.png':'/prepared-mobile.png'),fullPage:true});checks.push('Hosted filters and mobile lobby layout');
+  await page.waitForLoadState('load');await page.waitForFunction(()=>document.querySelector('#access-note')?.textContent.includes('当前设备'));await page.screenshot({path:output+(live?'/live-desktop.png':'/prepared-desktop.png'),fullPage:true});await page.setViewportSize({width:360,height:800});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.screenshot({path:output+(live?'/live-mobile.png':'/prepared-mobile.png'),fullPage:true});checks.push('Hosted filters and mobile lobby layout');
   assert.deepEqual(errors,[]);assert.deepEqual(externalRequests,[]);
   const report={date:'2026-10-19',mode:live?'live-production':'simulated-production-host-with-local-build',origin,checks,errors,externalRequests};await writeFile(output+(live?'/live-report.json':'/prepared-report.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
 }finally{await browser?.close();if(server)await new Promise(r=>server.close(r));}

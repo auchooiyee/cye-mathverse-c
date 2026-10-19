@@ -1,6 +1,6 @@
 # CYE-MathVerse — Phase 1 game collection
 
-**Cloudflare release:** repository `auchooiyee/cye-mathverse-c`; requested address `https://cye-mathverse-c.pages.dev`. Deployment setup and settings: [Cloudflare release guide](docs/lobby/CLOUDFLARE.md). Online saves use the online browser origin; use game backup/import to transfer a local run.
+**Play online: [CYE-MathVerse game lobby](https://cye-mathverse-c.pages.dev).** Published from `auchooiyee/cye-mathverse-c` with Cloudflare Pages automatic deployments. Release settings: [Cloudflare release guide](docs/lobby/CLOUDFLARE.md). Online saves use the online browser origin; use game backup/import to transfer a local run.
 
 **New: unified game lobby.** Double-click **Play CYE-MathVerse.command** to choose Cyber Code Breaker, GraphQuest or Variation Factory from one illustrated entrance. Form filters, Chinese guidance and in-game return links are included. The original ports and saved runs are preserved. [Lobby guide](docs/lobby/GUIDE.md) · [Lobby test results](docs/lobby/TEST_RESULTS.md).
 
@@ -28,7 +28,7 @@ npm start
 
 Open **http://127.0.0.1:4186/apps/games/cyber-code-breaker/**. If port 4186 is occupied, stop the earlier game server or use `PORT=4189 npm start` and open the newly printed address. Changing the port creates a separate browser storage origin; use save backup/import to transfer your run.
 
-This address works only on the current computer. Do not send a localhost URL to pupils expecting it to work on their phones. The layout supports small screens and was tested with Chrome mobile emulation; physical Android/iPad access requires a separately configured local-network or hosted release, which has not been done.
+This address works only on the current computer. Do not send a localhost URL to pupils expecting it to work on their phones. The layout supports small screens and was tested with Chrome mobile emulation; students on their own phones/tablets can use https://cye-mathverse-c.pages.dev. Physical-device classroom testing remains pending.
 
 ## Cyber Code Breaker: play and teaching
 
@@ -53,7 +53,7 @@ npm run build
 npm test
 ```
 
-Static files are copied into `dist/` using an allowlist. Build checks compare output/source hashes. There are no runtime or build dependencies and no remote assets. The app files total 1,036,067 bytes (about 1.04 MB) across all three games, including the 798 KB factory artwork uncompressed. The build is not published.
+Static files are copied into `dist/` using an allowlist. Build checks compare output/source hashes. There are no runtime or build dependencies and no remote assets. The app files total 1,036,067 bytes (about 1.04 MB) across all three games, including the 798 KB factory artwork uncompressed. The collection is published on Cloudflare Pages; future pushes to the connected main branch run build/tests before deployment.
 
 To test the built production files manually:
 
@@ -90,4 +90,4 @@ On another development machine, point `PLAYWRIGHT_PACKAGE` at its available Play
 - `docs/ARCHITECTURE.md`, `docs/TEST_RESULTS.md`: decisions, test evidence and limits.
 - `IMPLEMENTATION_STATUS.md`: machine-readable front matter plus ongoing milestone checklist.
 
-The original master plan is preserved. All three Phase 1 **local slices are implemented**. Cyber, GraphQuest and the Variation Wonderworks upgrade have user playtest acceptance. The unified lobby is implemented and tested, awaiting user playtest. Formal classroom readiness, teacher review, student pilots and physical-device QA remain pending. No cloud, multiplayer, automatic submission, full syllabus, teacher dashboard backend or latest-SPM assessment claim is made.
+The original master plan is preserved. All three Phase 1 **local slices are implemented**. Cyber, GraphQuest and the Variation Wonderworks upgrade have user playtest acceptance. The unified lobby is implemented and tested, awaiting user playtest. Formal classroom readiness, teacher review, student pilots and physical-device QA remain pending. Cloudflare static hosting is live. Multiplayer, automatic submission, full syllabus coverage and a teacher dashboard backend are not implemented; no latest-SPM assessment claim is made.
