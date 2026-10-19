@@ -1,0 +1,82 @@
+[
+  {
+    "path": "apps/games/cyber-code-breaker/index.html",
+    "sha256": "ee04a2d6258fe066da03f1704a33178da2aeb9842ff8215b937575db67197a13"
+  },
+  {
+    "path": "apps/games/cyber-code-breaker/style.css",
+    "sha256": "d86ef0d10159160b9dc0c8f4c66141117ae0f9aeb2260309c80946b1a0cf9dbf"
+  },
+  {
+    "path": "apps/games/cyber-code-breaker/app.js",
+    "sha256": "7464459f3f581f884889ecc62f5aaed8f54c5295e2ae928aaf6a5a89bc821908"
+  },
+  {
+    "path": "apps/games/cyber-code-breaker/questions.js",
+    "sha256": "536e9357898b8b8969d11880a47e820ab9e623ec5d223e90b8c5095ff5bd4f81"
+  },
+  {
+    "path": "apps/games/cyber-code-breaker/icon.svg",
+    "sha256": "781f73ff45c1a6cc4daa0754304028fb37b623ae115020662e2df5c9f7d9a0da"
+  },
+  {
+    "path": "packages/math/bases.js",
+    "sha256": "838b83427ac82003e818a51412d24855ecb0e313ebca3c243bf4aced6ede8f3e"
+  },
+  {
+    "path": "packages/session/run.js",
+    "sha256": "44268fe3daea673aa12488f0511732fdb1577c0595a257346c000804ba2f0ec5"
+  },
+  {
+    "path": "packages/reports/receipt.js",
+    "sha256": "58e2bb1081100a51b1c1851624b6a122df4310840ead3310cc25f1c573a6bf1d"
+  },
+  {
+    "path": "apps/games/graphquest/index.html",
+    "sha256": "a611a533cbb97bfe61acefb75133be2b6cf49469d73ea3305d1456c9d230f3a7"
+  },
+  {
+    "path": "apps/games/graphquest/style.css",
+    "sha256": "be5c674f87d9899efd66913a8566392f4c268aece86a46b24beb9daa4a8930fe"
+  },
+  {
+    "path": "apps/games/graphquest/app.js",
+    "sha256": "8b2f814c42714cea11dd6eb424ffcbda66a90f57756f769bd4d65834497bb7d7"
+  },
+  {
+    "path": "apps/games/graphquest/missions.js",
+    "sha256": "d62eaa1d81141b448f755d6c91508f3ec36cc9ed9bd192442a98ab39df049405"
+  },
+  {
+    "path": "apps/games/graphquest/state.js",
+    "sha256": "b11ee85381d1ac6a52a564406f3ce51af3d49a5dcb20abeaa116a2c96cabe781"
+  },
+  {
+    "path": "apps/games/graphquest/icon.svg",
+    "sha256": "6966ca0fe49150a502fd906bd46e85ae79dc5198dea8f277dc02f7530ba38b77"
+  },
+  {
+    "path": "apps/games/graphquest/launch-check.js",
+    "sha256": "dc5afdbd89450012d62bb937c689da3f6e9304068f3170e383a8dddfeefdf869"
+  },
+  {
+    "path": "packages/math/network.js",
+    "sha256": "ccbfb5656f62e36d0280824d541a08ed005dffac97fd1fe62e00209a7f7ebdfb"
+  },
+  {
+    "path": "packages/reports/delivery.js",
+    "sha256": "ab1101f383804a9926e689950302e0258ff9de6017916fab5d1bf8b12b9baa03"
+  },
+  {
+    "path": "Play Cyber Code Breaker.command",
+    "sha256": "afbcf7db597e2cd82a8a140a373e0c2a45eff36690aecd128475652fbfec8695"
+  },
+  {
+    "path": "Play GraphQuest.command",
+    "sha256": "1ad2388562acff0d7d3f2fe6a6efeb9b74a52fb91c86c394d23cb438c632b123"
+  },
+  {
+    "path": "CYE-MathVerse_Game_Universe_Master_Plan.md",
+    "sha256": "93d7989516721d7ac205c65ee9dc8d56341c38b35e4e8aaa0ad1edc7cd1deb5d"
+  }
+]

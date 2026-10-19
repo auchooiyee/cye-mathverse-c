@@ -1,0 +1,22 @@
+{
+  "name": "cye-mathverse-local",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node scripts/server.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "node tests/browser.mjs",
+    "start:graphquest": "node scripts/server.mjs --graphquest",
+    "test:graphquest:browser": "node tests/graphquest-browser.mjs",
+    "start:variation": "node scripts/server.mjs --variation",
+    "test:variation:browser": "node tests/variation-browser.mjs",
+    "test:variation:experience": "node tests/variation-experience-browser.mjs",
+    "start:lobby": "node scripts/play-lobby.mjs",
+    "test:lobby:browser": "node tests/lobby-browser.mjs"
+  }
+}

@@ -1,0 +1,28 @@
+export const VERSION='variation-factory-1.0.0';
+export const SOURCE='https://bukuteksdigital.my/wp-content/uploads/2020/06/DSKP-MATEMATIK-Tingkatan-4-DAN-Tingkatan-5-KSSM.pdf';
+const range=(n)=>Array.from({length:n},(_,i)=>i+1);
+const x=(label,values=range(10))=>({label,values});
+export const stations=[
+  {name:'Label studio',short:'Labels',kind:'direct',symbol:'↗',colour:'#b74727',rule:'Output varies directly as the number of sheets.',badge:'Print partner'},
+  {name:'Wrapping crew',short:'Wrap',kind:'inverse',symbol:'↘',colour:'#306c71',rule:'For a fixed job, time varies inversely as identical crews working together.',badge:'Team organiser'},
+  {name:'Tray kitchen',short:'Trays',kind:'joint',symbol:'×',colour:'#6c5588',rule:'Output varies jointly as trays and cavities per tray.',badge:'Batch builder'},
+  {name:'Tin workshop',short:'Tins',kind:'square',symbol:'x²',colour:'#9c5b1c',rule:'Coating needed varies directly as the square of a square lid’s side.',badge:'Square thinker'},
+  {name:'Ribbon bench',short:'Ribbon',kind:'root',symbol:'√x',colour:'#a24365',rule:'Ribbon length varies directly as the square root of the square lid’s area.',badge:'Root explorer'},
+  {name:'Parcel club',short:'Parcels',kind:'combined',symbol:'÷',colour:'#3c6a46',rule:'Portions per box vary directly as batches and inversely as equal boxes.',badge:'Fair-share maker'}
+];
+const raw=[
+  {title:'Welcome, little label press',sample:{x:3,y:12},target:24,x:x('Sheets'),unit:'labels',tip:'More sheets produce more labels at the same rate.',insight:'Doubling sheets doubles the output.',hint:'The sample gives 12 = 3k. Divide by 3, then use y = kx to plan 24 labels.',reuse:'Number Academy f5-1 calibration 12 = 4 × 3, independently verified.'},
+  {title:'Labels for the night market',sample:{x:4,y:12},target:30,x:x('Sheets'),unit:'labels',tip:'Find the number of sheets from target ÷ k.',insight:'The constant is the number of labels per sheet.',hint:'12 = 4k, so find k first. The target is 30 labels with the same k.'},
+  {title:'Wrap the festival parcels',sample:{x:3,y:16},target:8,x:x('Crews',range(8)),unit:'minutes',tip:'More crews shorten this fixed job; do not multiply time by crews.',insight:'Crews × minutes stays constant for this model.',hint:'For y = k/x, multiply the sample time by its crews: k = 16 × 3. Then solve 8 = k/x.'},
+  {title:'A second wrapping shift',sample:{x:4,y:18},target:9,x:x('Crews',range(8)),unit:'minutes',tip:'To halve the time, what happens to the number of crews?',insight:'Doubling crews halves the time, for this idealised job.',hint:'k = 4 × 18. You need half the sample time, so compare the crew counts.'},
+  {title:'Make a party batch',sample:{x:2,z:3,y:12},target:48,x:x('Trays',range(4)),z:x('Cavities per tray',range(6)),unit:'sweets',tip:'Try a different factor pair of trays × cavities.',insight:'Different tray configurations can give the same total.',hint:'12 = k × 2 × 3. Once k is known, find xz from 48 = kxz.'},
+  {title:'Choose your tray layout',sample:{x:2,z:4,y:24},target:60,x:x('Trays',range(6)),z:x('Cavities per tray',range(6)),unit:'sweets',tip:'Hold one input fixed while you adjust the other.',insight:'Holding z fixed makes y directly proportional to x.',hint:'24 = k × 2 × 4. Your tray and cavity counts must have product 60/k.'},
+  {title:'Coat the square lids',sample:{x:3,y:18},target:50,x:x('Lid side (cm)',range(8)),unit:'coating units',tip:'The lid area is x², not 2x.',insight:'Doubling the side needs four times the coating.',hint:'18 = k × 3². Then solve 50 = kx² using a positive side length.'},
+  {title:'A thicker finish',sample:{x:2,y:12},target:108,x:x('Lid side (cm)',range(8)),unit:'coating units',tip:'First divide the target by k; then find its square root.',insight:'The graph curves upward because y grows as x².',hint:'12 = k × 2². The target area factor is 108/k.'},
+  {title:'Ribbon around a square',sample:{x:9,y:12},target:28,x:x('Lid area (cm²)',range(10).map(n=>n*n)),unit:'cm of ribbon',tip:'The controls choose area. The side length is √x.',insight:'Four times the area needs twice the ribbon.',hint:'12 = k√9, and √9 = 3. Find k, then solve 28 = k√x.'},
+  {title:'A ribbon-and-cross design',sample:{x:4,y:12},target:48,x:x('Lid area (cm²)',range(10).map(n=>n*n)),unit:'cm of ribbon',tip:'Square the required side factor to find the area.',insight:'The area is x; the graph is y versus area, not side.',hint:'12 = k√4. After finding k, 48/k gives √x; square it to get x.'},
+  {title:'Share the celebration',sample:{x:3,z:2,y:12},target:10,x:x('Batches',range(8)),z:x('Equal boxes',range(6)),unit:'portions per box',tip:'More batches increase portions; more boxes share them more thinly.',insight:'Doubling batches and boxes keeps portions per box unchanged.',hint:'12 = k × 3/2. Find k, then choose x and z so kx/z = 10.',reuse:'Number Academy combined-variation-plan sample and prediction, independently verified; context replaced with equal sharing.'},
+  {title:'The final community order',sample:{x:2,z:3,y:4},target:9,x:x('Batches',range(8)),z:x('Equal boxes',range(6)),unit:'portions per box',tip:'Compare batch-to-box ratios, not their sum.',insight:'Every setting with the same x/z ratio gives the same output.',hint:'4 = k × 2/3. Then choose a ratio x/z that makes y = 9.'}
+];
+export const orders=raw.map((o,i)=>({...o,id:`V${String(i+1).padStart(2,'0')}`,station:Math.floor(i/2),kind:stations[Math.floor(i/2)].kind,gameId:'M5-01',version:VERSION,sourceUrl:SOURCE,reviewerStatus:'teacher-review-pending',sp: i<2||i>=6&&i<10?['1.1.2','1.1.4']:i<4?['1.2.2','1.2.3']:i<6?['1.1.3','1.1.4']:['1.3.1','1.3.2'],provenance:o.reuse||'Original CYE-MathVerse factory scenario'}));
+export const initialDraft=o=>({k:'',x:o.x.values[0],z:o.z?.values[0]||1});

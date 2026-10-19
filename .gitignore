@@ -1,0 +1,11 @@
+dist/
+artifacts/
+.DS_Store
+node_modules/
+backups/
+assets/originals/
+.env
+.env.*
+!.env.example
+.wrangler/
+.dev.vars

@@ -1,0 +1,42 @@
+[
+  {
+    "path": "apps/games/cyber-code-breaker/index.html",
+    "sha256": "ee04a2d6258fe066da03f1704a33178da2aeb9842ff8215b937575db67197a13"
+  },
+  {
+    "path": "apps/games/cyber-code-breaker/style.css",
+    "sha256": "d86ef0d10159160b9dc0c8f4c66141117ae0f9aeb2260309c80946b1a0cf9dbf"
+  },
+  {
+    "path": "apps/games/cyber-code-breaker/app.js",
+    "sha256": "7464459f3f581f884889ecc62f5aaed8f54c5295e2ae928aaf6a5a89bc821908"
+  },
+  {
+    "path": "apps/games/cyber-code-breaker/questions.js",
+    "sha256": "536e9357898b8b8969d11880a47e820ab9e623ec5d223e90b8c5095ff5bd4f81"
+  },
+  {
+    "path": "apps/games/cyber-code-breaker/icon.svg",
+    "sha256": "781f73ff45c1a6cc4daa0754304028fb37b623ae115020662e2df5c9f7d9a0da"
+  },
+  {
+    "path": "packages/math/bases.js",
+    "sha256": "838b83427ac82003e818a51412d24855ecb0e313ebca3c243bf4aced6ede8f3e"
+  },
+  {
+    "path": "packages/session/run.js",
+    "sha256": "44268fe3daea673aa12488f0511732fdb1577c0595a257346c000804ba2f0ec5"
+  },
+  {
+    "path": "packages/reports/receipt.js",
+    "sha256": "58e2bb1081100a51b1c1851624b6a122df4310840ead3310cc25f1c573a6bf1d"
+  },
+  {
+    "path": "Play Cyber Code Breaker.command",
+    "sha256": "afbcf7db597e2cd82a8a140a373e0c2a45eff36690aecd128475652fbfec8695"
+  },
+  {
+    "path": "CYE-MathVerse_Game_Universe_Master_Plan.md",
+    "sha256": "93d7989516721d7ac205c65ee9dc8d56341c38b35e4e8aaa0ad1edc7cd1deb5d"
+  }
+]

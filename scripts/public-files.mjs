@@ -1,0 +1,20 @@
+export const publicFiles = [
+  'apps/lobby/index.html', 'apps/lobby/style.css', 'apps/lobby/app.js', 'apps/shared/lobby-nav.js',
+  'apps/games/cyber-code-breaker/index.html',
+  'apps/games/cyber-code-breaker/style.css',
+  'apps/games/cyber-code-breaker/app.js',
+  'apps/games/cyber-code-breaker/questions.js',
+  'apps/games/cyber-code-breaker/icon.svg',
+  'packages/math/bases.js', 'packages/session/run.js', 'packages/reports/receipt.js',
+  'apps/games/graphquest/index.html', 'apps/games/graphquest/style.css',
+  'apps/games/graphquest/app.js', 'apps/games/graphquest/missions.js',
+  'apps/games/graphquest/state.js', 'apps/games/graphquest/icon.svg', 'apps/games/graphquest/launch-check.js',
+  'packages/math/network.js', 'packages/reports/delivery.js',
+  'apps/games/variation-factory/index.html', 'apps/games/variation-factory/style.css',
+  'apps/games/variation-factory/app.js', 'apps/games/variation-factory/orders.js',
+  'apps/games/variation-factory/state.js', 'apps/games/variation-factory/icon.svg',
+  'apps/games/variation-factory/launch-check.js',
+  'packages/math/variation.js', 'packages/reports/factory.js',
+  'apps/games/variation-factory/experience.js', 'apps/games/variation-factory/scenery.js',
+  'apps/games/variation-factory/spectacle.css', 'apps/games/variation-factory/assets/factory-world-v2.jpg'
+];

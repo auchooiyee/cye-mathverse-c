@@ -1,0 +1,22 @@
+[
+  {
+    "path": "apps/games/variation-factory/orders.js",
+    "sha256": "1c80b304712b0d81b3d4c5e049a0f7012d99761c573aa11fa082b50f84b25ea5"
+  },
+  {
+    "path": "apps/games/variation-factory/state.js",
+    "sha256": "f367fbfa78a8f299661ffa465dcaf4695e71ce64395e9d293fe468bad9b7225f"
+  },
+  {
+    "path": "packages/math/variation.js",
+    "sha256": "497c4d761d7af980b782e6799e5b52309ce114119e79cb60995eb2fe7a8c1cfd"
+  },
+  {
+    "path": "packages/reports/factory.js",
+    "sha256": "923f2ed11df31464285a06c27ffd50507249b4d0d43c0ac120821f5bc64055ea"
+  },
+  {
+    "path": "Play Variation Factory.command",
+    "sha256": "713ee16a7c8b0edfb479d05ab50fd104847384a3a54fbfab07696d01de7dce91"
+  }
+]
