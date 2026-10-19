@@ -1,4 +1,6 @@
-# CYE-MathVerse — local Phase 1
+# CYE-MathVerse — Phase 1 game collection
+
+**Cloudflare release:** repository `auchooiyee/cye-mathverse-c`; requested address `https://cye-mathverse-c.pages.dev`. Deployment setup and settings: [Cloudflare release guide](docs/lobby/CLOUDFLARE.md). Online saves use the online browser origin; use game backup/import to transfer a local run.
 
 **New: unified game lobby.** Double-click **Play CYE-MathVerse.command** to choose Cyber Code Breaker, GraphQuest or Variation Factory from one illustrated entrance. Form filters, Chinese guidance and in-game return links are included. The original ports and saved runs are preserved. [Lobby guide](docs/lobby/GUIDE.md) · [Lobby test results](docs/lobby/TEST_RESULTS.md).
 
@@ -51,7 +53,7 @@ npm run build
 npm test
 ```
 
-Static files are copied into `dist/` using an allowlist. Build checks compare output/source hashes. There are no runtime or build dependencies and no remote assets. The app files total 1,035,619 bytes (about 1.04 MB) across all three games, including the 798 KB factory artwork uncompressed. The build is not published.
+Static files are copied into `dist/` using an allowlist. Build checks compare output/source hashes. There are no runtime or build dependencies and no remote assets. The app files total 1,036,067 bytes (about 1.04 MB) across all three games, including the 798 KB factory artwork uncompressed. The build is not published.
 
 To test the built production files manually:
 

@@ -3,14 +3,19 @@ schema_version: 1
 updated: 2026-10-19
 workspace: /Users/chooiyee/Documents/CYE-MathVerse  GPT
 master_plan_version: '1.0'
-delivery: local-only
+delivery: local-and-cloudflare-preparation
 phase: 1
-iteration: unified-game-lobby
-state: lobby-tested-awaiting-user-playtest
+iteration: github-cloudflare-release
+state: github-pushed-cloudflare-setup-in-progress
 curriculum_document: KPM/BPK KSSM Mathematics Forms 4–5, September 2018
 curriculum_currency: latest-status-not-confirmed
 teacher_review: pending
 public_deployment: false
+public_deployment_authorized: true
+github_repository: https://github.com/auchooiyee/cye-mathverse-c
+github_push: completed
+cloudflare_requested_url: https://cye-mathverse-c.pages.dev
+cloudflare_deployment: setup-in-progress
 implemented_games: [M4-02, M4-05, M5-01]
 cyber_user_playtest: passed
 cyber_user_question_review: accepted-all-questions
@@ -36,8 +41,8 @@ variation_configurations_checked: 228
 variation_scaling_cases: 500
 base_math_property_cases: 36864
 production_app_files: 34
-production_app_bytes: 1035619
-production_code_bytes: 237358
+production_app_bytes: 1036067
+production_code_bytes: 237806
 production_art_bytes: 798261
 external_requests_in_browser_tests: 0
 receipt_verification: local/unverified
@@ -109,3 +114,9 @@ Prior iteration records remain in `docs/graphquest/`, `docs/variation-factory/`,
 ## Next milestone
 
 User accepts the lobby after trying all three entrances and returning with saved progress. Then run a small supervised pilot and prioritize changes from observed student use. Student-device access and Phase 2 expansion remain future scope.
+
+## GitHub / Cloudflare release — 2026-10-19
+
+User explicitly authorized pushing to `auchooiyee/cye-mathverse-c` and publishing at `cye-mathverse-c.pages.dev`. The target GitHub repository was empty and public; it was not replaced or made public by this agent. Initialized this local project, retained all sibling projects, and pushed the three-game collection. Excluded local backups, original full-size generated art, screenshots, test receipts, environment files and build output from Git.
+
+Prepared static Pages output and security headers; hosted lobby explains browser-local saves and uses same-origin relative game links. Fifty unit/build/content checks and a simulated production-host browser check pass, including a completed task in each game, lobby return, reload/save continuity and mobile layout. Cloudflare setup is in progress; no live-production success is claimed yet. See `docs/lobby/CLOUDFLARE.md`.

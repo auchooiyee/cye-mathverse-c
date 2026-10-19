@@ -16,11 +16,11 @@ try{
   const context=await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce'});
   if(!live)await context.route(origin+'/**',async route=>{const path=new URL(route.request().url()).pathname;const response=await context.request.get(local+path,{maxRedirects:0});await route.fulfill({response});});
   const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(new URL(r.url()).origin!==origin)externalRequests.push(r.url());});page.on('response',r=>{if(r.status()>=400)errors.push(`${r.status()} ${r.url()}`);});
-  await page.goto(origin+'/');await page.locator('[data-game]').first().waitFor();
+  await page.goto(origin+(live?'/':'/apps/lobby/'));await page.locator('[data-game]').first().waitFor();
   assert.match(await page.locator('#access-note').innerText(),/当前设备/);assert.ok(!(await page.locator('#access-note').innerText()).includes('.command'));
   for(const slug of ['cyber-code-breaker','graphquest','variation-factory']){const href=await page.locator(`[data-game="${slug}"]`).getAttribute('href');assert.equal(new URL(href,page.url()).origin,origin);assert.ok(!href.includes('127.0.0.1'));}
   if(live){const response=await context.request.get(origin+'/apps/lobby/');assert.ok(response.headers()['content-security-policy']?.includes("connect-src 'none'"));}
-  checks.push('HTTPS host root and all three relative game links; hosted student instructions; restrictive headers when live');
+  checks.push(live?'HTTPS root and all three relative game links; hosted student instructions and restrictive headers':'Simulated HTTPS lobby and all three relative game links; hosted student instructions');
   await page.locator('[data-filter="5"]').click();assert.equal(await page.locator('.game-card:visible').count(),1);await page.locator('[data-filter="all"]').click();
   for(const [i,slug] of ['cyber-code-breaker','graphquest','variation-factory'].entries()){
     await page.locator(`[data-game="${slug}"]`).click();assert.equal(new URL(page.url()).origin,origin);
